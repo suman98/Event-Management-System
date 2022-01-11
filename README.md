@@ -14,7 +14,7 @@
 - `php artisan db:seed`.
 - `php artisan serve`.
 
-## Load Dummy Data for faculty & courses
+## Load Dummy Data for Events
 
 ## Additional Dependency Packages
 
