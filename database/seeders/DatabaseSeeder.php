@@ -12,7 +12,11 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        // \App\Models\User::factory(10)->create();
+    {   
+        \DB::beginTransaction();
+        \App\Models\User::factory(10)->create();
+        $this->call([LocationSeeder::class,EventSeeder::class]);
+        \DB::commit();
+
     }
 }

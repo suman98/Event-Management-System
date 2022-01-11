@@ -24,6 +24,5 @@ class HomeController extends Controller
     public function index()
     {
         return inertia('Home');
-        //return view('home');
     }
 }

@@ -28,15 +28,42 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  */
 import Vue from 'vue'
 import { createInertiaApp } from '@inertiajs/inertia-vue'
+import { InertiaProgress } from '@inertiajs/progress'
+import { Link } from '@inertiajs/inertia-vue';
 
-createInertiaApp({
-  id: 'vue_app_content',
-  resolve: name => require(`./Pages/${name}`),
-  setup({ el, App, props, plugin }) {
-    Vue.use(plugin)
+if(document.getElementById('vue_app_content') !== null){
+    
+    InertiaProgress.init();
+    
+    Vue.component('Link',Link);
+   
+    Vue.component('pagination', require('laravel-vue-pagination'));
+    
+    if(typeof Swal !== undefined){
 
-    new Vue({
-      render: h => h(App, props),
-    }).$mount(el)
-  },
-})
+        Vue.prototype.toastAlert  = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+          }
+        });
+
+    }
+   
+    createInertiaApp({
+      id: 'vue_app_content',
+      resolve: name => require(`./Pages/${name}`),
+      setup({ el, App, props, plugin }) {
+        Vue.use(plugin)
+        new Vue({
+          render: h => h(App, props),
+        }).$mount(el)
+      },
+    })
+
+} 
