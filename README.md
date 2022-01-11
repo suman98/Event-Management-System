@@ -12,6 +12,7 @@
 - `composer install`.
 - `php artisan migrate`.
 - `php artisan db:seed`.
+- `npm instal && npm run dev`.
 - `php artisan serve`.
 
 ## Load Dummy Data for Events
