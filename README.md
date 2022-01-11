@@ -8,7 +8,7 @@
 </p>
 
 ## Setting Up Projects
-
+-  Create a database and set in `.env`
 - `composer install`.
 - `php artisan migrate`.
 - `php artisan db:seed`.
