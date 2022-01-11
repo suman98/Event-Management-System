@@ -99,6 +99,7 @@ export default {
                     }
                 }).then(() => {
                     this.allEvent = {
+                        ...this.allEvent,
                         ...{
                             data: this.allEvent.data.filter((value) => value.id != id)
                         }

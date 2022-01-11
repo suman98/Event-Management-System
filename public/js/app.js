@@ -5409,7 +5409,7 @@ var urlParams = new URLSearchParams(window.location.search);
             _token: _this.$page.props.csrf_token
           }
         }).then(function () {
-          _this.allEvent = _objectSpread({}, {
+          _this.allEvent = _objectSpread(_objectSpread({}, _this.allEvent), {
             data: _this.allEvent.data.filter(function (value) {
               return value.id != id;
             })
