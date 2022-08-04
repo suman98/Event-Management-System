@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## Simple Event Management For Quick Demo Of My Interia / Vue / Laravel Skill
+## Simple Event Management For Quick Demo of My Interia / Vue / Laravel Skill
 
 ## Setting Up Projects
 -  Create a database and set in `.env`
